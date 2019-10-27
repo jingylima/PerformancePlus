@@ -2,7 +2,6 @@ import fitbit
 import gather_keys_oauth2 as Oauth2
 import pandas as pd 
 import datetime
-import numpy
 from flask import Flask
 import docusign_envelope
 import matplotlib.pyplot as plt
@@ -49,8 +48,8 @@ plt.show()
 '''
 avg_hour_lst = avg_days_lst[-90:]
 
-avg_hour = numpy.mean(avg_hour_lst)
-avg_day = numpy.mean(avg_days_lst)
+avg_hour = sum(avg_hour_lst)/90
+avg_day = sum(avg_days_lst)/len(avg_days_lst)
 ran_hour = max(avg_hour_lst) - min(avg_hour_lst)
 
 if ran_hour > 35:
