@@ -26,7 +26,7 @@ today = str(datetime.datetime.now().strftime("%Y%m%d"))
 today2 = str(datetime.datetime.now().strftime("%Y-%m-%d"))
 
 fit_statsHR = auth2_client.intraday_time_series('activities/heart', base_date=yesterday2, detail_level='1sec')
-fit_statsSl = auth2_client.sleep(date = yesterday)
+fit_statsSl = auth2_client.sleep(date = yesterday2)
     
 if fit_statsSl['sleep'][0]['minuteData'][-1]['value'] > '1':
   restless = True
