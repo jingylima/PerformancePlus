@@ -138,5 +138,9 @@ app = Flask(__name__)
 def hello():
   return {'mood' : mood, 'avg_hr_hour' : avg_hour, 'avg_hr_day' : avg_day, 'ran_hr_hour': ran_hour, 'restless' : restless, 'active_time' : active_time, 'normal_time' : normal_time, 'sleepy_time' : sleepy_time}
 
+@app.route("/docu")
+def docusign():
+  docusign_envelope.send_document_for_signing()
+
 if __name__ == "__main__":
   app.run()
