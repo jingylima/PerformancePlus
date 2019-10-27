@@ -41,7 +41,7 @@ time_lst = []
 for i in fit_statsHR['activities-heart-intraday']['dataset']:
   avg_days_lst.append(i['value'])
   time_lst.append(i['time'])
-  '''
+'''
 heartdf = pd.DataFrame({'Heart Rate':avg_days_lst,'Time':time_lst})
 heartdf.plot(kind = 'line', x = 'Time', y = 'Heart Rate')
 plt.show()
