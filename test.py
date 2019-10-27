@@ -52,14 +52,10 @@ avg_hour = sum(avg_hour_lst)/90
 avg_day = sum(avg_days_lst)/len(avg_days_lst)
 ran_hour = max(avg_hour_lst) - min(avg_hour_lst)
 
-if ran_hour > 35:
-  mood = 'Take a deep breath. Relax.'
-elif avg_hour > 100:
-  mood = 'So much energy, go for a run!'
-elif avg_hour < 60:
-  mood = 'Get some rest, you deserve it.'
+if ran_hour > 35 or avg_hour > 100 or avg_hour < 60:
+  mood = 'Wait at least 2 hours before making a decision.'
 else:
-  mood = "Alert, yet calm. You're all set!"
+  mood = "Now is the perfect time to make your decisions."
 
 active_lst = []
 normal_lst = []
